@@ -16,4 +16,22 @@ public class ContaCorrente extends Conta {
 		this.credito = credito;
 	}
 
+	@Override
+	public String sacar(double valor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String depositar(double valor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String consultar(double valor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

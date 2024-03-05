@@ -1,10 +1,11 @@
 package entidades;
 
-public abstract class Conta {
+public abstract class Conta implements OperacoesBancarias {
 	
 	private int agencia;
 	private String titular;
 	private String cpf;
+	private double saldo;
 	
 	public Conta(int agencia, String titular, String cpf) {
 		this.agencia = agencia;
@@ -30,6 +31,14 @@ public abstract class Conta {
 	
 	public String getCpf() {
 		return cpf;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
 	}
 	
 }
