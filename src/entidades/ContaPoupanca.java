@@ -2,6 +2,8 @@ package entidades;
 
 public class ContaPoupanca extends Conta{
 
+	public ContaPoupanca() {}
+	
 	public ContaPoupanca(int agencia, String titular, String cpf) {
 		super(agencia, titular, cpf);
 	}
@@ -13,18 +15,6 @@ public class ContaPoupanca extends Conta{
 			throw new SaldoIndisponivelException();
 		}
 		return "Saque realizado com sucesso!";
-	}
-
-	@Override
-	public String depositar(double valor) {
-		this.setSaldo(valor);
-		return "Deposito realizado com sucesso!";
-	}
-
-	@Override
-	public String consultar(double valor) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
