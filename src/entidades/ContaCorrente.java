@@ -8,8 +8,10 @@ public class ContaCorrente extends Conta {
 		
 	}
 
-	public ContaCorrente(int agencia, String titular, String cpf) {
+	public ContaCorrente(int agencia, String titular, String cpf, double credito) {
 		super(agencia, titular, cpf);
+		this.credito = credito;
+		this.setTipo(tipoDeConta.CORRENTE);
 	}
 
 	public double getCredito() {
@@ -22,9 +24,10 @@ public class ContaCorrente extends Conta {
 
 	@Override
 	public String sacar(double valor) throws SaldoIndisponivelException {
-		if (valor < this.getSaldo()) {
+		if (valor > this.getSaldo()) {
 			throw new SaldoIndisponivelException();
 		}
-		return "Saque realizado com sucesso!";
+		this.setSaldo(this.getSaldo() - valor);
+		return "\nSaque realizado com sucesso!\n";
 	}
 }

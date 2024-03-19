@@ -9,6 +9,7 @@ public abstract class Conta implements OperacoesBancarias {
 	private String cpf;
 	private double saldo;
 	private int numeroDeConta;
+	private tipoDeConta tipo;
 	
 	public Conta() {	}
 	
@@ -20,11 +21,11 @@ public abstract class Conta implements OperacoesBancarias {
 	
 	public String depositar(double valor) {
 		this.setSaldo(valor);
-		return "Deposito realizado com sucesso!";
+		return "\nDeposito realizado com sucesso!";
 	}
 
 	public String consultar() {
-		return "Você possui R$" + this.getSaldo();
+		return "Você possui R$" + String.format("%.2f", this.getSaldo()) + "\n";
 	}
 	
 	public int getAgencia() {
@@ -69,6 +70,19 @@ public abstract class Conta implements OperacoesBancarias {
 		} else {
 			this.numeroDeConta = contas.get(contas.size() - 1).numeroDeConta + 1;
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return "\n" + titular + "\nAgencia: " + agencia + "\nConta: " + numeroDeConta + "\n" + tipo.getNome(); 
+	}
+
+	public tipoDeConta getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(tipoDeConta tipo) {
+		this.tipo = tipo;
 	}
 
 	

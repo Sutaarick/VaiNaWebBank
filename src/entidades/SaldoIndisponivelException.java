@@ -9,7 +9,7 @@ public class SaldoIndisponivelException extends Exception{
 	
 	@Override
 	public String getMessage() {
-		return "Saldo indisponivel!!";
+		return "\nSaldo indisponivel!!";
 	}
 
 }
